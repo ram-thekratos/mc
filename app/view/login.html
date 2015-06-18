@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MasterCard application</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
 
@@ -16,49 +18,24 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="../css/app.css">
 
+<!-- Adding Angular JS -->
+<script src="../lib/js/angular.min.js"></script>
+
+<!-- Adding Angular JS controllers-->
+<script src="../controllers/loginCtrl.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../lib/js/ui-bootstrap.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="../lib/js/ui-bootstrap-tpls.js"></script>
+
+
+
 </head>
-<body>
+<body ng-app="masterCardApp">
 
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="pr-wrap">
-                <div class="pass-reset">
-                    <label>
-                        Enter the email you signed up with</label>
-                    <input type="email" placeholder="Email" />
-                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
-                </div>
-            </div>
-            <div class="wrap">
-                <p class="form-title">
-                    Sign In</p>
-                <form class="login">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
-                <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
-                <div class="remember-forgot">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" />
-                                    Remember Me
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 forgot-pass-content">
-                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
-                        </div>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<div class="container">
+<div class="container" ng-controller="loginCtrl">
     <div class="row">
         <div class="col-md-4 col-md-offset-7">
             <div class="panel panel-default">
@@ -67,10 +44,10 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">
+                        <label class="col-sm-3 control-label">
                             Email</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                            <input type="email" class="form-control" placeholder="Email" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -92,7 +69,7 @@
                     </div>
                     <div class="form-group last">
                         <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-success btn-sm">
+                            <button type="submit" class="btn btn-success btn-sm" ng-click="login()">
                                 Sign in</button>
                                  <button type="reset" class="btn btn-default btn-sm">
                                 Reset</button>
@@ -101,10 +78,11 @@
                     </form>
                 </div>
                 <div class="panel-footer">
-                    Not Registred? <a href="http://www.jquery2dotnet.com">Register here</a></div>
+                    Not Registered? <a href="#" ng-click="register()">Register here</a></div>
             </div>
         </div>
     </div>
+    <div ng-include="'../modal/registration_modal.html'"> </div>
 </div>
 
 
